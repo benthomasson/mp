@@ -19,8 +19,10 @@ while True:
     try:
         manager = ThingyManager(address=('127.0.0.1',8001), authkey='abracadabra')
         manager.connect()
-        thingy = manager.Thingy()
-        print thingy.name
+        while True:
+            thingy = manager.Thingy()
+            print thingy.name
+            time.sleep(1)
     except Exception, e:
         print str(e), e.__class__
     manager = None
